@@ -37,5 +37,7 @@ function addlist(){
 
 function deletethis(a){
     const divs = document.getElementById(a);
+    divs.style.animationName = "fade";
     divs.remove();
+
 }
