@@ -12,50 +12,33 @@
     <script type="text/javascript" src="/src/js/bootstrap.bundle.js"></script>
     <title>To do List</title>
 </head>
-<body>
+<body onload="date()">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xxl-4 col-lg-3 col-sm-2"></div>
             <div class="col-xxl-4 col-lg-6 col-sm-8 r">
-               <div class="container-box" onmouseover="hover()" onmouseout="out_hover()" id="c-box">
+                <div class="container-box" onmouseover="hover()" onmouseout="out_hover()" id="c-box">
                     <div class="sm-container" id="s-box">
                         <div class="container-datebox">
-                            <div class="date">05</div>
+                            <div class="date"></div>
                             <div style="float:left ;">
-                                <span class="month">NOV</span><br>
-                                <span class="year">2022</span>
+                                <span class="month"></span><br>
+                                <span class="year"></span>
                             </div>
-                            <div class="weekday">Tuesday</div>
+                            <div class="weekday"></div>
                         </div>
-                        <div class="container-input">
-
+                        <div class="inputab">
+                            <input type="text" class="textinput">
+                            <input type="button" value="Add" class="addbutton" id="Add" onclick="addlist()">
                         </div>
+                        <div class="container-input"></div>
                     </div>     
-               </div>
-               <div class="circle" onmouseover="hover()" onmouseout="out_hover()" data-bs-toggle="modal" data-bs-target="#addmodal"></div> 
+                </div>
+                <!--<div class="circle" onmouseover="hover()" onmouseout="out_hover()" data-bs-toggle="modal" data-bs-target="#addmodal"></div> -->
             </div>       
             <div class="col-xxl-4 col-lg-3 col-sm-2"></div>
         </div>
         
-        <!-- Modal -->
-        <div class="modal fade" id="addmodal" tabindex="-1" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content" style="border-radius: 20px;">
-                    <div class="modal-header">
-                    <p class="modal-title" id="exampleModalLabel">Add Task</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input class="add-text"placeholder="Your text goes here">
-                        <button class="learn-more"> Learn More
-                        </button>
-                    
-                       
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
     </div> 
 </body>
 </html>

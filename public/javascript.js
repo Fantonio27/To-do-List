@@ -1,6 +1,5 @@
 let i = 0;
 const newtext = "";
-date();
 function hover(){
     document.getElementById("s-box").style.transform = " scale(0.987, 0.97)";
     document.getElementById("c-box").style.boxShadow = " 0px 0px 30px 1px rgba(0, 255, 117, 0.30)";
@@ -17,31 +16,26 @@ function date(){
     const month = new Date().toLocaleDateString('en-us',{month:"short"});
     const year = new Date().toLocaleDateString('en-us',{year:"numeric"});
     
-    /*
-    let month = date.getMonth();
-    let day = date.getDay() - 1;
-    let year = date.getFullYear();
-    let days = date.getUTCDay();
-    alert(month + "/" + day + "/" + year);
-    document.querySelector(".text-time").innerHTML = date;*/
+    document.querySelector(".date").textContent = day;
+    document.querySelector(".month").textContent = month;
+    document.querySelector(".year").textContent = year;
+    document.querySelector(".weekday").textContent = week;
+}
+let count = 0;
+function addlist(){
+    const a = document.querySelector(".textinput");
+    if(a.value != ""){
+        count++;
+        //const list = "<label class='container'><p class='list'>"+ a.value +"</p><input type='checkbox' checked><div class='checkmark'></div></label>";
+        const list = "<div class='list' id='"+count+"'><input type='checkbox' id='check' onclick='deletethis(this.value)' value='"+count+"' class='form-check-input'><label for='check'>"+ a.value +"</label></div>";
+        document.querySelector(".container-input").innerHTML += list;
+        a.value = "";
+    }else{
+        alert("Please input!")
+    }
 }
 
-function Additem(){
-    var item = document.getElementById("txt").value;
-
-    const newChild = document.createElement('div');
-    newChild.className = 'item';
-    newChild.innerHTML = '<input type="checkbox" class="form-check-input" id="checkbox">' 
-                        +'<p class="p2">'+item+'</p>'
-                        + '<img src="pictures/delete-60.png" class="dltpic">';
-
-    const newChild2 = document.createElement('div');
-    newChild.className = 'del';
-    newChild.innerHTML.appendChild(newChild);
-    
-
-    if(item != ""){
-        i++;
-        document.getElementById('taskbox').appendChild(newChild2);
-    }
+function deletethis(a){
+    const divs = document.getElementById(a);
+    divs.remove();
 }
